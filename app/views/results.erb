@@ -1,12 +1,12 @@
-<h1>Rock, Paper, Scissors, Lizard, Spock</h1>
+<center><h1>Rock, Paper, Scissors, Lizard, Spock</h1>
 
 <% if @winner != 'draw' %>
 
-<center><h3>You chose <%= @weapon %>. The computer chose <%= @computer %>. <%= @winner %> wins!</h3></center>
+<h3>You chose <%= @weapon %>. The computer chose <%= @computer %>. <%= @winner %> wins!</h3>
 
 <% else %>
-<center><h3>You chose <%= @weapon %>. The computer chose <%= @computer %>. It's a <%= @winner %>!</h3></center>
+<h3>You chose <%= @weapon %>. The computer chose <%= @computer %>. It's a <%= @winner %>!</h3>
 
 <% end %>
 
-<a href="/game">Wanna play again? </a>
+<a href="/game">Wanna play again? </a></center>
