@@ -23,3 +23,7 @@ end
 When(/^I click on "(.*?)"$/) do |weapon|
   click_on(weapon)
 end
+
+When(/^the computer chooses scissors$/) do
+  @computer = "scissors"
+end

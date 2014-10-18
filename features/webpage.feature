@@ -21,3 +21,13 @@ Scenario: Choosing Scissors
 	Given I have signed up
 	When I click on "scissors"
 	Then I should see "Victoria chose scissors."
+
+Scenario: Choosing Paper
+	Given I have signed up
+	When I click on "paper"
+	Then I should see "Victoria chose paper."
+
+Scenario: Winning the Game
+	Given I have signed up
+	When I click on "rock"
+	Then I should see "is the winner!"
