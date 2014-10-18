@@ -20,6 +20,6 @@ Given(/^I have signed up$/) do
   click_button("Let's Play!")
 end
 
-When(/^I click on "(.*?)"$/) do |arg1|
-  click_on("rock")
+When(/^I click on "(.*?)"$/) do |weapon|
+  click_on(weapon)
 end

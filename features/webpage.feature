@@ -12,7 +12,12 @@ Scenario: Signing Up
 	And click on "Let's Play!"
 	Then I should see "Welcome, Victoria. Choose a weapon."
 
-Scenario: Choosing a Weapon
+Scenario: Choosing Rock
 	Given I have signed up
 	When I click on "rock"
 	Then I should see "Victoria chose rock."
+
+Scenario: Choosing Scissors
+	Given I have signed up
+	When I click on "scissors"
+	Then I should see "Victoria chose scissors."
