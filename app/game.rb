@@ -21,8 +21,8 @@ class Game
 	def result
 		random_choice
 		@winner = 'draw' if @player.weapon == @computer_choice
-		@winner = @player if DEFEATS[@player.weapon] == @computer_choice
-		@winner = @computer_choice if DEFEATS[@computer_choice] == @player.weapon
+		@winner = @player.name if DEFEATS[@player.weapon] == @computer_choice
+		@winner = 'Computer' if DEFEATS[@computer_choice] == @player.weapon
 	end
 
 end

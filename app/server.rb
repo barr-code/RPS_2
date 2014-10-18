@@ -1,6 +1,9 @@
 require 'sinatra/base'
+require_relative 'game'
+require_relative 'player'
 
 class RPS < Sinatra::Base
+  GAME = Game.new
 
 	enable :sessions
 
@@ -9,15 +12,33 @@ class RPS < Sinatra::Base
   end
 
   post '/game' do
-  	@player = params[:player]
-  	session[:player] = @player
-  	erb :game
+    session[:player] = params[:player]
+  	redirect to '/game'
+  end
+
+  get '/game' do
+    @player = session[:player]
+    GAME.player = Player.new(@player)
+    puts GAME.inspect
+    erb :game
   end
 
   post '/results' do
-  	@weapon = params[:weapon]
+    GAME.player.weapon = params[:weapon]
   	@player = session[:player]
-  	erb :results
+
+    redirect to('/results')
+  end
+
+  get '/results' do
+    GAME.result
+    @winner = GAME.winner
+    @player = session[:name]
+    @weapon = GAME.player.weapon
+    @computer = GAME.computer_choice
+    puts GAME.inspect
+    erb :results
+
   end
 
 
