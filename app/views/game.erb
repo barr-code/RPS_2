@@ -1,12 +1,17 @@
+<h1><center>Rock, Paper, Scissors, Lizard, Spock</center></h1>
+
 <% if @player %>
 
-<h1> Welcome, <%= @player %>. Choose a weapon. </h1>
+<h3> Welcome, <%= @player %>. Choose a weapon. </h3>
 
 <form method="post" action="/results">
-	<input type="image" src="http://1000awesomethings.files.wordpress.com/2008/08/rock.jpg" width='400' name="weapon" value="rock">
-	<input type="image" src="http://1000awesomethings.files.wordpress.com/2008/08/scissors.jpg" width='407' name="weapon" value="scissors">
-	<input type="image" src="http://1000awesomethings.files.wordpress.com/2008/08/paper.jpg" width='400' name="weapon" value="paper">
+	<input type="image" src="http://ak.picdn.net/shutterstock/videos/743818/preview/stock-footage-rock-hand-sign-ntsc.jpg" width='200' height='200' name="weapon" value="rock">
+	<input type="image" src="http://ak.picdn.net/shutterstock/videos/743824/preview/stock-footage-scissors-hand-sign-ntsc.jpg" width='207' height='200' name="weapon" value="scissors">
+	<input type="image" src="http://ak.picdn.net/shutterstock/videos/743851/preview/stock-footage-paper-rock-scissors-ntsc.jpg" width='200' height='200' name="weapon" value="paper">
+	<input type="image" src="http://cdn.marketplaceimages.windowsphone.com/v8/images/695d55c3-4389-4702-a82d-ad4d71af624b?imageType=ws_icon_large" width='200' height='200' name="weapon" value="lizard">
+	<input type="image" src="http://www.prosportstickers.com/product_images/c/2963_live_long_star_trek_sticker__48531.jpg" width='200' height='200' name="weapon" value="Spock">
 </form>
 
 
 <% end %>
+

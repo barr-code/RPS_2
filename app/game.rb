@@ -10,19 +10,21 @@ class Game
 		@winner = nil
 	end
 
-	DEFEATS = {"rock" => "scissors",
-		"scissors" => "paper",
-		"paper" => "rock"}
+	DEFEATS = {"rock" => ["scissors", "lizard"],
+		"scissors" => ["paper", "lizard"],
+		"paper" => ["rock", "Spock"],
+		"lizard" => ["Spock", "paper"],
+		"Spock" => ["rock", "scissors"]}
 
 	def random_choice
-		@computer_choice = %w(rock paper scissors).sample
+		@computer_choice = %w(rock paper scissors lizard Spock).sample
 	end
 
 	def result
 		random_choice
 		@winner = 'draw' if @player.weapon == @computer_choice
-		@winner = @player.name if DEFEATS[@player.weapon] == @computer_choice
-		@winner = 'Computer' if DEFEATS[@computer_choice] == @player.weapon
+		@winner = @player.name if DEFEATS[@player.weapon].include? @computer_choice
+		@winner = 'Computer' if DEFEATS[@computer_choice].include? @player.weapon
 	end
 
 end

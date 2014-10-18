@@ -4,7 +4,7 @@ Feature: Joining a Game
 
 Scenario: Visiting the Page
 	Given I am on the home page
-	Then I should see "Welcome to Rock Paper Scissors!"
+	Then I should see "Welcome to Rock, Paper, Scissors, Lizard, Spock!"
 
 Scenario: Signing Up
 	Given I am on the home page
@@ -15,19 +15,29 @@ Scenario: Signing Up
 Scenario: Choosing Rock
 	Given I have signed up
 	When I click on "rock"
-	Then I should see "Victoria chose rock."
+	Then I should see "You chose rock."
 
 Scenario: Choosing Scissors
 	Given I have signed up
 	When I click on "scissors"
-	Then I should see "Victoria chose scissors."
+	Then I should see "You chose scissors."
 
 Scenario: Choosing Paper
 	Given I have signed up
 	When I click on "paper"
-	Then I should see "Victoria chose paper."
+	Then I should see "You chose paper."
+
+Scenario: Choosing Lizard
+	Given I have signed up
+	When I click on "lizard"
+	Then I should see "You chose lizard."
+
+Scenario: Choosing Spock
+	Given I have signed up
+	When I click on "Spock"
+	Then I should see "You chose Spock."
 
 Scenario: Winning the Game
 	Given I have signed up
 	When I click on "rock"
-	Then I should see "is the winner!"
+	Then I should see "wins!"
