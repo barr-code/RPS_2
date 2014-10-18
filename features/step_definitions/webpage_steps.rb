@@ -13,3 +13,13 @@ end
 When(/^click on "(.*?)"$/) do |play|
   click_button(play)
 end
+
+Given(/^I have signed up$/) do
+  visit '/'
+  fill_in("player", :with => "Victoria")
+  click_button("Let's Play!")
+end
+
+When(/^I click on "(.*?)"$/) do |arg1|
+  click_on("rock")
+end

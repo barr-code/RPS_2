@@ -11,3 +11,8 @@ Scenario: Signing Up
 	When I fill in "player" with "Victoria"
 	And click on "Let's Play!"
 	Then I should see "Welcome, Victoria. Choose a weapon."
+
+Scenario: Choosing a Weapon
+	Given I have signed up
+	When I click on "rock"
+	Then I should see "Victoria chose rock."
