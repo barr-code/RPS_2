@@ -34,4 +34,13 @@ describe Game do
 		expect(game.winner).not_to eq nil
 	end
 
+	it "starts with 0 computer wins" do
+		expect(game.computer_wins).to eq 0
+	end
+
+	it "keeps track of computer wins" do
+		game.computer_wins += 4
+		expect(game.computer_wins).to eq 4
+	end
+
 end

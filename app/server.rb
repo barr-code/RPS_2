@@ -13,12 +13,13 @@ class RPS < Sinatra::Base
 
   post '/game' do
     session[:player] = params[:player]
+    GAME.player = Player.new(session[:player])
+
   	redirect to '/game'
   end
 
   get '/game' do
     @player = session[:player]
-    GAME.player = Player.new(@player)
     puts GAME.inspect
     erb :game
   end
@@ -36,6 +37,16 @@ class RPS < Sinatra::Base
     @player = session[:name]
     @weapon = GAME.player.weapon
     @computer = GAME.computer_choice
+
+    if @winner == GAME.player.name
+      GAME.player.wins += 1
+    elsif @winner == 'Computer'
+      GAME.computer_wins += 1
+    end
+
+    @player_wins = GAME.player.wins
+    @comp_wins = GAME.computer_wins
+
     puts GAME.inspect
     erb :results
 

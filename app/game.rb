@@ -2,12 +2,13 @@ require_relative 'player'
 
 class Game
 
-	attr_accessor :player, :computer_choice, :winner
+	attr_accessor :player, :computer_choice, :winner, :computer_wins
 
 	def initialize
 		@player = nil
 		@computer_choice = nil
 		@winner = nil
+		@computer_wins = 0
 	end
 
 	DEFEATS = {"rock" => ["scissors", "lizard"],

@@ -16,4 +16,13 @@ describe Player do
 		player.weapon = "scissors"
 		expect(player.weapon).to eq "scissors"
 	end
+
+	it "starts with zero wins" do
+		expect(player.wins).to eq 0
+	end
+
+	it "keeps track of wins" do
+		player.wins += 1
+		expect(player.wins).to eq 1
+	end
 end
