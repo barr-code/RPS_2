@@ -7,6 +7,7 @@ class RPS < Sinatra::Base
 
 	enable :sessions
 
+
   get '/' do
     erb :index
   end
@@ -50,6 +51,11 @@ class RPS < Sinatra::Base
     puts GAME.inspect
     erb :results
 
+  end
+
+  get '/game_over' do
+    session.clear
+    redirect to('/')
   end
 
 
